@@ -47,73 +47,82 @@ function compare(choice1,choice2) {
     }
     switch(choice1){
         case "rock":
-            if(choice2==="scissors") {
-                return "Rock smashes Scissors! You Win!";
-            }
-            if(choice2==="lizard") {
-                return "Rock crushes Lizard! You Win!";
-            }
-            if(choice2==="spock") {
-                return "Spock vaporizes Rock! You Lose! :(";
-            }
-            else {
-                return "Paper envelops Rock! You Lose! :(";
+            switch(choice2){
+                case "scissors":
+                    return "Rock smashes Scissors! You Win!";
+                    break;
+                case "lizard":
+                    return "Rock crushes Lizard! You Win!";
+                    break;
+                case "spock":
+                    return "Spock vaporizes Rock! You Lose! :(";
+                    break;
+                default:
+                    return "Paper envelops Rock! You Lose! :(";
+                    break;
             }
             break;
         case "paper":
-            if(choice2==="scissors") {
-                return "Scissors cuts Paper! You Lose! :(";
+            switch(choice2){
+                case "scissors":
+                    return "Scissors cuts Paper! You Lose! :(";
+                    break;
+                case "lizard":
+                    return "Lizard eats Paper! You Lose! :(";
+                    break;
+                case "spock":
+                    return "Paper disproves Spock! You Win!";
+                    break;
+                default:
+                    return "Paper envelops Rock! You Win!";
+                    break;
             }
-            else if(choice2==="lizard") {
-                return "Lizard eats Paper! You Lose! :(";
-            }
-            else if(choice2==="spock") {
-                return "Paper disproves Spock! You Win!";
-            }
-            else{
-                return "Paper envelops Rock! You Win!";
-            }
-            break;
         case "scissors":
-            if(choice2==="paper") {
-                return "Scissors cut paper! You Win!";
-            }
-            else if(choice2==="lizard") {
-                return "Scissors decapitate Lizard! You Win!";
-            }
-            else if(choice2==="spock") {
-                return "Spock smashes Scissors! You Lose! :(";
-            }
-            else{
-                return "Rock smashes Scissors! You Lose! :(";
+            switch(choice2){
+                case "paper":
+                    return "Scissors cut paper! You Win!";
+                    break;
+                case "lizard":
+                    return "Scissors decapitate Lizard! You Win!";
+                    break;
+                case "spock":
+                    return "Spock smashes Scissors! You Lose! :(";
+                    break;
+                default:
+                    return "Rock smashes Scissors! You Lose! :(";
+                    break;
             }
             break;
         case "lizard":
-            if(choice2==="scissors"){
-                return "Scissors decapitate Lizard! You Lose! :(";
-            }
-            else if(choice2==="paper") {
-                return "Lizard eats Paper! You Win!";
-            }
-            else if(choice2==="spock") {
-                return "Lizard poisons Spock! You Win!";
-            }
-            else{
-                return "Rock crushes Lizard! You Lose! :(";
+            switch(choice2){
+                case "scissors":
+                    return "Scissors decapitate Lizard! You Lose! :(";
+                    break;
+                case "paper":
+                    return "Lizard eats Paper! You Win!";
+                    break;
+                case "spock":
+                    return "Lizard poisons Spock! You Win!";
+                    break;
+                default:
+                    return "Rock crushes Lizard! You Lose! :(";
+                    break;
             }
             break;
         case "spock":
-            if(choice2==="scissors"){
-                return "Spock smashes Scissors! You Win!";
-            }
-            else if(choice2==="lizard") {
-                return "Lizard poisons Spock! You Lose! :(";
-            }
-            else if(choice2==="paper") {
-                return "Paper disproves Spock! You Lose! :(";
-            }
-            else{
-                return "Spock vaporizes Rock! You Win!";
+            switch(choice2){
+                case "scissors":
+                    return "Spock smashes Scissors! You Win!";
+                    break;
+                case "lizard":
+                    return "Lizard poisons Spock! You Lose! :(";
+                    break;
+                case "paper":
+                    return "Paper disproves Spock! You Lose! :(";
+                    break;
+                default:
+                    return "Spock vaporizes Rock! You Win!";
+                    break;
             }
             break;
     }
