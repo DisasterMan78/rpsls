@@ -18,33 +18,18 @@ var aiChoice = document.getElementById('computerchoice');
 var playAgain = document.getElementById('reload');
 var outcome = document.getElementById('outcome');
 
-var computerChoice = Math.random();
+var random = Math.random();
+var computerChoice = setComputerChoice(random);
 
 
 function compare(choice1,choice2) {
-    if (computerChoice < 0.20){
-        computerChoice = "rock";
-        aiChoice.classList.add("rock");
-    }
-    else if(0.21 <= computerChoice <= 0.40){
-        computerChoice = "paper";
-        aiChoice.classList.add("paper");
-    }
-    else if(0.41 <= computerChoice <= 0.60){
-        computerChoice = "scissors";
-        aiChoice.classList.add("scissors");
-    }
-    else if(0.61 <= computerChoice <= 0.80){
-        computerChoice = "lizard";
-        aiChoice.classList.add("lizard");
-    }
-    else{
-        computerChoice = "spock";
-        aiChoice.classList.add("spock")
-    }
+console.log(aiChoice, choice2)
+    aiChoice.classList.add(choice2);
+
     if(choice1===choice2){
-        return "It's a tie! Darn!"
+        return "It's a tie! Darn!";
     }
+
     switch(choice1){
         case "rock":
             switch(choice2){
@@ -129,13 +114,32 @@ function compare(choice1,choice2) {
 
 };
 
+function setComputerChoice(random){
+    if (random < 0.2){
+        computerChoice = "rock";
+    }
+    else if(random < 0.4){
+        computerChoice = "paper";
+    }
+    else if(random < 0.6){
+        computerChoice = "scissors";
+    }
+    else if(random < 0.8){
+        computerChoice = "lizard";
+    }
+    else{
+        computerChoice = "spock";
+    }
+
+    return computerChoice;
+}
+
 
 for (var i = options.length - 1; i >= 0; i--) {
     buttons[options[i]].onclick = function(event) {
         var myChoice = event.target.id;
 
         playerChoice.classList.add(myChoice);
-        compare(myChoice,computerChoice);
         outcome.innerHTML = compare(myChoice,computerChoice);
     }
 }
