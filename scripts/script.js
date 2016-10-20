@@ -1,9 +1,15 @@
+var options = [
+        'rock',
+        'paper',
+        'scissors',
+        'lizard',
+        'spock'
+    ],
+    buttons = [];
 
-var rockChoice = document.getElementById('rock_choice');
-var paperChoice = document.getElementById('paper_choice');
-var scissorsChoice = document.getElementById('scissors_choice');
-var lizardChoice = document.getElementById('lizard_choice');
-var spockChoice = document.getElementById('spock_choice');
+for (var i = options.length - 1; i >= 0; i--) {
+    buttons[options[i]] = document.getElementById(options[i]);
+}
 
 var playerChoice = document.getElementById('playerchoice');
 //var playerChose = document.getElementsByClassName('option');
@@ -112,39 +118,15 @@ function compare(choice1,choice2) {
 
 };
 
-rockChoice.onclick = function() {
-    var myChoice = this.className;
-    playerChoice.classList.add(myChoice);
-    compare(myChoice,computerChoice);
-    outcome.innerHTML = compare(myChoice,computerChoice);
-}
 
-paperChoice.onclick = function() {
-    var myChoice = this.className;
-    playerChoice.classList.add(myChoice);
-    compare(myChoice,computerChoice);
-    outcome.innerHTML = compare(myChoice,computerChoice);
-}
+for (var i = options.length - 1; i >= 0; i--) {
+    buttons[options[i]].onclick = function(event) {
+        var myChoice = event.target.id;
 
-scissorsChoice.onclick = function() {
-    var myChoice = this.className;
-    playerChoice.classList.add(myChoice);
-    compare(myChoice,computerChoice);
-    outcome.innerHTML = compare(myChoice,computerChoice);
-}
-
-lizardChoice.onclick = function() {
-    var myChoice = this.className;
-    playerChoice.classList.add(myChoice);
-    compare(myChoice,computerChoice);
-    outcome.innerHTML = compare(myChoice,computerChoice);
-}
-
-spockChoice.onclick = function() {
-    var myChoice = this.className;
-    playerChoice.classList.add(myChoice);
-    compare(myChoice,computerChoice);
-    outcome.innerHTML = compare(myChoice,computerChoice);
+        playerChoice.classList.add(myChoice);
+        compare(myChoice,computerChoice);
+        outcome.innerHTML = compare(myChoice,computerChoice);
+    }
 }
 
 playAgain.onclick = function() {
