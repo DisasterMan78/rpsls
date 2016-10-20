@@ -67,7 +67,7 @@ body {
 	background-size: 250px !important;
 }
 
-.Rock, .Paper, .Scissors,.Lizard, .Spock {
+.rock, .paper, .scissors, .lizard, .spock {
 	display: block;
 	margin: 5px;
 	height: 150px;
@@ -76,23 +76,23 @@ body {
 	background-size: 150px;
 }
 
-.Rock {
+.rock {
 	background-image: url('../assets/rock.png');
 }
 
-.Paper {
+.paper {
 	background-image: url('../assets/paper.png');
 }
 
-.Scissors {
+.scissors {
 	background-image: url('../assets/scissors.png');
 }
 
-.Lizard {
+.lizard {
 	background-image: url('../assets/lizard.png');
 }
 
-.Spock {
+.spock {
 	background-image: url('../assets/spock.png');
 }
 

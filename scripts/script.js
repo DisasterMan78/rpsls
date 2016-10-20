@@ -4,6 +4,7 @@ var paperChoice = document.getElementById('paper_choice');
 var scissorsChoice = document.getElementById('scissors_choice');
 var lizardChoice = document.getElementById('lizard_choice');
 var spockChoice = document.getElementById('spock_choice');
+
 var playerChoice = document.getElementById('playerchoice');
 //var playerChose = document.getElementsByClassName('option');
 //var playerChoose = playerChose.getElementsByTagName('A');
@@ -12,94 +13,96 @@ var playAgain = document.getElementById('reload');
 var outcome = document.getElementById('outcome');
 
 var computerChoice = Math.random();
-var compare = function(choice1,choice2) {
+
+
+function compare(choice1,choice2) {
     if (computerChoice < 0.20){
-        computerChoice = "Rock";
-        aiChoice.classList.add("Rock");
+        computerChoice = "rock";
+        aiChoice.classList.add("rock");
     }
     else if(0.21 <= computerChoice <= 0.40){
-        computerChoice = "Paper";
-        aiChoice.classList.add("Paper");
+        computerChoice = "paper";
+        aiChoice.classList.add("paper");
     }
     else if(0.41 <= computerChoice <= 0.60){
-        computerChoice = "Scissors";
-        aiChoice.classList.add("Scissors");
+        computerChoice = "scissors";
+        aiChoice.classList.add("scissors");
     }
     else if(0.61 <= computerChoice <= 0.80){
-        computerChoice = "Lizard";
-        aiChoice.classList.add("Lizard");
+        computerChoice = "lizard";
+        aiChoice.classList.add("lizard");
     }
     else{
-        computerChoice = "Spock";
-        aiChoice.classList.add("Spock")
+        computerChoice = "spock";
+        aiChoice.classList.add("spock")
     }
     if(choice1===choice2){
         return "It's a tie! Darn!"
     }
-    if(choice1==="Rock"){
-        if(choice2==="Scissors") {
+    if(choice1==="rock"){
+        if(choice2==="scissors") {
             return "Rock smashes Scissors! You Win!";
         }
-        if(choice2==="Lizard") {
+        if(choice2==="lizard") {
             return "Rock crushes Lizard! You Win!";
         }
-        if(choice2==="Spock") {
+        if(choice2==="spock") {
             return "Spock vaporizes Rock! You Lose! :(";
         }
         else {
             return "Paper envelops Rock! You Lose! :(";
         }
     }
-    if(choice1==="Paper"){
-        if(choice2==="Scissors") {
+    if(choice1==="paper"){
+        if(choice2==="scissors") {
             return "Scissors cuts Paper! You Lose! :(";
         }
-        else if(choice2==="Lizard") {
+        else if(choice2==="lizard") {
             return "Lizard eats Paper! You Lose! :(";
         }
-        else if(choice2==="Spock") {
+        else if(choice2==="spock") {
             return "Paper disproves Spock! You Win!";
         }
         else{
             return "Paper envelops Rock! You Win!";
         }
     }
-    if(choice1==="Scissors") {
-        if(choice2==="Paper") {
+    if(choice1==="scissors") {
+        if(choice2==="paper") {
             return "Scissors cut paper! You Win!";
         }
-        else if(choice2==="Lizard") {
+        else if(choice2==="lizard") {
             return "Scissors decapitate Lizard! You Win!";
         }
-        else if(choice2==="Spock") {
+        else if(choice2==="spock") {
             return "Spock smashes Scissors! You Lose! :(";
         }
         else{
             return "Rock smashes Scissors! You Lose! :(";
         }
     }
-    if(choice1==="Lizard"){
-        if(choice2==="Scissors"){
+    if(choice1==="lizard"){
+        if(choice2==="scissors"){
             return "Scissors decapitate Lizard! You Lose! :(";
         }
-        else if(choice2==="Paper") {
+        else if(choice2==="paper") {
             return "Lizard eats Paper! You Win!";
         }
-        else if(choice2==="Spock") {
+        else if(choice2==="spock") {
             return "Lizard poisons Spock! You Win!";
         }
         else{
             return "Rock crushes Lizard! You Lose! :(";
         }
     }
-    if(choice1==="Spock"){
-        if(choice2==="Scissors"){
+    if(choice1==="spock"){
+        if(choice2==="scissors"){
             return "Spock smashes Scissors! You Win!";
         }
-        else if(choice2==="Lizard") {
+        else if(choice2==="lizard") {
             return "Lizard poisons Spock! You Lose! :(";
         }
-        else if(choice2==="Paper") {
+        else if(choice2==="paper") {
             return "Paper disproves Spock! You Lose! :(";
         }
         else{
