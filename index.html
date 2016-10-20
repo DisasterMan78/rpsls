@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Joseph Ortega's Rock, Paper, Scissors, Lizard, Spock</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Welcome to Joseph's Rock, Paper, Scissors, Lizard, Spock!</h1>
+			<div class="instructionsMenu">
+				<a id="instructions" href="#">Click for Instructions</a>
+			</div>
+			<div class="optionsList">
+				<ul>
+					<li class="option"><a href="#" class="Rock" id="rock_choice"></a></li>
+					<li class="option"><a href="#" class="Paper" id="paper_choice"></a></li>
+					<li class="option"><a href="#" class="Scissors" id="scissors_choice"></a></li>
+					<li class="option"><a href="#" class="Lizard" id="lizard_choice"></a></li>
+					<li class="option"><a href="#" class="Spock" id="spock_choice"></a></li>
+				</ul>
+			</div>
+			<div class="battlefield">
+				<ul>
+					<li class="contestant" label="Your Choice" id="playerchoice"></li>
+					<li class="contestant" label="Your opponen's Choice" id="computerchoice"></li>
+				</ul>
+			</div>
+			<div class="outcome_container">
+				<p id="outcome"></p>
+				<button id="reload">Reload</button>
+			</div>
+		</div>
+		<div class="instructions_modal invisible">
+			<div class="instructions">
+				<h3>Instructions</h3>
+				<img src="assets/rules.jpg"><br>
+				<a id="close" href="#">Close</a>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/script.js"></script>
+	</body>
+</html>
